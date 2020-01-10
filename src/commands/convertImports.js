@@ -29,16 +29,16 @@ function convertImports(directory) {
 function convertFileImport(file) {
   const fileData = getFileSync(file);
   const lines = fileData.split(/\n/);
-  const importPrefix = '@totvs/thf-';
+  const importPrefix = '@portinari/portinari-';
 
   const newLines = lines.map(line => {
     if (line.includes(importPrefix)) {
-      const regexResult = line.match(/('|")(@totvs\/thf-(ui|storage|kendo|code\-editor|templates|sync)\/(.*?))('|")/);
+      const regexResult = line.match(/('|")(@portinari\/portinari-(ui|storage|kendo|code\-editor|templates|sync)\/(.*?))('|")/);
 
       if (regexResult) {
         const word = regexResult[2];
-        const thfProject = `@totvs/thf-${regexResult[3]}`;
-        return line.replace(word, thfProject);
+        const portinariProject = `@portinari/portinari-${regexResult[3]}`;
+        return line.replace(word, portinariProject);
       }
     }
 

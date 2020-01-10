@@ -35,7 +35,7 @@ class Rewrite {
           return console.log(err);
         }
 
-        let replacedData = data.replace(/t-title="THF"/g, newTitle);
+        let replacedData = data.replace(/p-title="Portinari"/g, newTitle);
 
         fs.writeFile(file, replacedData, 'utf8', function (err) {
           if (err) return console.log(err);

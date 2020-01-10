@@ -35,7 +35,7 @@ export class {{moduleName}}RoutingModule { }
 
   htmlSource(moduleName, component) {
     const componentTag = generateComponentTag(component);
-    const htmlSource = `<{{componentTag}} t-title="{{title}}" [t-service-api]="service">
+    const htmlSource = `<{{componentTag}} P-title="{{title}}" [P-service-api]="service">
 </{{componentTag}}>
 `;
     return this._generateTemplateSource(htmlSource, { title: moduleName, componentTag });
@@ -45,7 +45,7 @@ export class {{moduleName}}RoutingModule { }
     const moduleSource = `import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { {{component}}Module } from '@totvs/thf-templates';
+import { {{component}}Module } from '@portinari/portinari-templates';
 
 import { {{moduleName}}RoutingModule } from './{{fileName}}-routing.module';
 import { {{moduleName}}Component } from './{{fileName}}.component';

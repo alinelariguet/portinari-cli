@@ -9,9 +9,9 @@ const componentsListPrompt = {
   name: 'component',
   message: `Choose a dynamic component to create:`,
   choices: [
-    'ThfPageDynamicDetail',
-    'ThfPageDynamicEdit',
-    'ThfPageDynamicTable'
+    'PoPageDynamicDetail',
+    'PoPageDynamicEdit',
+    'PoPageDynamicTable'
   ]
 };
 
@@ -28,10 +28,10 @@ async function add(moduleName) {
     const packageJson = _getPackageJson();
 
     if (!_containsTemplatesPackage(packageJson)) {
-      const thfVersion = await _getThfVersion(packageJson);
-      const version = thfVersion ? `${thfVersion}` : 'latest';
+      const portinariVersion = await _getPortinariVersion(packageJson);
+      const version = portinariVersion ? `${portinariVersion}` : 'latest';
 
-      await build.installPackages(`@totvs/thf-templates@${version}`);
+      await build.installPackages(`@portinari/portinari-templates@${version}`);
     }
 
     fileWriter.config(moduleName);
@@ -47,15 +47,15 @@ async function add(moduleName) {
 }
 
 function _containsTemplatesPackage(packageJson) {
-  return packageJson['dependencies']['@totvs/thf-templates'];
+  return packageJson['dependencies']['@portinari/portinari-templates'];
 }
 
 function _getPackageJson() {
   return require(`${process.cwd()}\\package.json`);
 }
 
-function _getThfVersion(packageJson) {
-  return packageJson['dependencies']['@totvs/thf-ui'];
+function _getPortinariVersion(packageJson) {
+  return packageJson['dependencies']['@portinari/portinari-ui'];
 }
 
 module.exports = add

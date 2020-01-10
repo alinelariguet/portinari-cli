@@ -1,15 +1,15 @@
 {
-  "name": "@totvs/thf-cli",
-  "version": "4.0.0",
+  "name": "@alinelariguet/portinari-cli",
+  "version": "1.0.0",
   "description": "CLI",
-  "repository": "github:totvs/thf-cli",
+  "repository": "github:alinelariguet/portinari-cli",
   "bin": {
-    "thf": "bin/cli.js"
+    "portinari": "bin/cli.js"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "TOTVS",
+  "author": "ALINELARIGUET",
   "license": "MIT",
   "dependencies": {
     "chalk": "2.4.2",

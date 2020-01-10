@@ -1,6 +1,6 @@
-# THF CLI
+# PORTINARI CLI
 
-The THF CLI is a command-line interface tool that you use to initialize and develop Angular applications with THF already configured.
+The Portinari CLI is a command-line interface tool that you use to initialize and develop Angular applications with Portinari already configured.
 You can use the tool directly in a command shell.
 
 ## Installation
@@ -10,27 +10,25 @@ Make sure Node, NPM and GIT are installed.
 Then, install the CLI globally:
 
 ```
-$ npm install -g @totvs/thf-cli
+$ npm install -g @alinelariguet/portinari-cli
 ```
 
 ## Getting Started
 
-Start a new project using the THF CLI and add components dynamically in your project.
+Start a new project using the Portinari CLI and add components dynamically in your project.
 
 To run an application, follow the steps below:
 
 ```
-thf new SampleProject
+portinari new SampleProject
 cd SampleProject
 ng serve
 ```
 
-![Getting Started](https://media.giphy.com/media/3FbGebspps6pxlIUFr/giphy.gif)
-
-To check the commands list of THF CLI, invoke --help:
+To check the commands list of Portinari CLI, invoke --help:
 
 ```
-thf --help
+portinari --help
 ```
 
 ## Commands
@@ -39,19 +37,13 @@ Command | Alias | Description
 --- | --- | ---
 *[add](#add)* | a | Add a module that has a dynamic component of your choice.
 *[new](#new)* | n | Creates a new project based in a template.
-*[convert-imports](#convert-imports)* | ci | Converts imports from THF version 3 to THF version 4.
 
 ```
-thf add <newComponentName>
+portinari add <newComponentName>
 ```
 
 ```
-thf new <projectName>
-```
-
-
-```
-thf convert-imports
+portinari new <projectName>
 ```
 
 ### add
@@ -61,16 +53,14 @@ This command adds in your project a module that has a dynamic component of your 
 > Must be in project root folder.
 
 ```
-thf add <newComponentName>
+portinari add <newComponentName>
 ```
-
-![Add Command](https://media.giphy.com/media/ksb6TvzeH4dcDSRMi8/giphy.gif)
 
 If the project was built through the "sidemenu" template, you need to configure the new module by adding it in the route and in the menu list of the project.
 
 > app.component.ts
 ```
-readonly menus: Array<ThfMenuItem> = [
+readonly menus: Array<PoMenuItem> = [
   { label: 'Home', link: '/home' },
   { label: 'Users', link: '/users' },
   // add here
@@ -93,57 +83,43 @@ const routes: Routes = [
 
 ### new
 
-This command initialize a project to you start your development more quickly with the THF already set up ready to run!
+This command initialize a project to you start your development more quickly with the Portinari already set up ready to run!
 
 ```
-thf new <projectName> --template <template> --title <title>
+portinari new <projectName> --template <template> --title <title>
 ```
-
-![New Command](https://media.giphy.com/media/2A3FtMzAVfGQArw5i5/giphy.gif)
 
 #### -t / --template
 
-All templates have the THF configured, the templates that you can start are:
+All templates have the Portinari configured, the templates that you can start are:
 
 Template | Description
 --- | ---
-*blank* | Creates a simple project with THFModule and THF css configured.
+*blank* | Creates a simple project with PoModule and Portinari css configured.
 *sidemenu* | Creates a project containing the menu and modules using lazy loading to start development.
 
 > The default template is `sidemenu`.
 
 ```
-thf new <projectName> --template <template>
+portinari new <projectName> --template <template>
 ```
 
 #### --title
 
-The informed value in this option will be used by the `thf-toolbar` title, if you don't use this option, the project name will be used.
+The informed value in this option will be used by the `po-toolbar` title, if you don't use this option, the project name will be used.
 
 ```
-thf new <projectName> --title <title>
+portinari new <projectName> --title <title>
 ```
 
 ### convert-imports
 
-New version of THF 4 has a new and easier way to import components. Now all you need is the project name.
+The Portinari has a new and easier way to import components. Now all you need is the project name.
 
 For example this:
 
 ```
-import { ThfPageLogin } from '@totvs/thf-templates/components/thf-page-login';
-```
-
-Is now is changed to:
-
-```
-import { ThfPageLogin } from '@totvs/thf-templates';
-```
-
-Using this command in your project Angular or Ionic folder changes those imports automatically.
-
-```
-thf convert-imports
+import { PoPageLogin } from '@portinari/portinari-templates';
 ```
 
 ### Add Git remote repository
